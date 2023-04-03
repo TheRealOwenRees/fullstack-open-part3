@@ -35,8 +35,8 @@ const Add = ({ persons, setPersons, newName, setNewName, newNumber, setNewNumber
         .then(setTimeout(() => {
             setErrorMessage()
           }, 5000))
-        .catch(() => {
-            setErrorMessage(`An error occured`)
+        .catch((error) => {
+            setErrorMessage(error.response.data.error)
             setErrorType('error')
             setTimeout(() => {
               setErrorMessage()
